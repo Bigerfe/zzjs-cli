@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './css/index.scss';
 import RootContext from '../../app/route-context';
@@ -34,7 +35,7 @@ export default class Index extends KrsPageBase {
 
         // const resArr = await fetch.multipleFetch(fetch1, fecth2);
 
-        resArr=[{data:[
+        const resArr=[{data:[
             { id: 1, name: '哈喽 krs 框架1' },
             {id:2,name:'krs 框架1'},
             { id: 2, name: 'krs 框架2' }
