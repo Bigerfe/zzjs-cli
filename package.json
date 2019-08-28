@@ -1,7 +1,7 @@
 {
-  "name": "@krs/krs-cli",
+  "name": "@krs/cli",
   "version": "1.0.0",
-  "description": "krs 项目脚手架工具",
+  "description": "krs(koa-react-ssr) 服务端渲染开发框架的配套脚手架工具",
   "main": "index.js",
   "bin": {
     "krs-cli": "./bin/index.js"
