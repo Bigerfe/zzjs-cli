@@ -1,0 +1,30 @@
+{
+  "name": "@krs/krs-cli",
+  "version": "1.0.0",
+  "description": "krs 项目脚手架工具",
+  "main": "index.js",
+  "bin": {
+    "krs-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bigerfe/krs-cli.git"
+  },
+  "author": "bigerfe.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bigerfe/krs-cli/issues"
+  },
+  "homepage": "https://github.com/Bigerfe/krs-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.18.0",
+    "download-git-repo": "^1.1.0",
+    "inquirer": "^6.2.0",
+    "ora": "^3.0.0",
+    "shelljs": "^0.8.3"
+  }
+}
