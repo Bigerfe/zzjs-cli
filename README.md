@@ -12,6 +12,6 @@
 
 `krs-cli -i` 根据提示可创建项目和项目内的页面,创建页面需要切换到项目的根目录
 
-[krr-cli github](https://github.com/Bigerfe/krs-cli)
+[krs-cli github](https://github.com/Bigerfe/krs-cli)
 
 [krs框架 github](https://github.com/Bigerfe/koa-react-ssr)
