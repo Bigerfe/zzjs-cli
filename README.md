@@ -8,9 +8,11 @@
 
 `npm i zzj-cli -g `  全局安装
 
-`zzj -h` 查看命令帮助
+`zzjs -h` 查看命令帮助
 
-`zzjs -i` 根据提示可创建项目和项目内的页面,创建页面需要切换到项目的根目录
+`zzjs -i` 根据提示初始化项目
+
+`zzjs -p` 根据提示创建 zz.js 内的 page
 
 [zzjs-cli github](https://github.com/Bigerfe/zzjs-cli)
 

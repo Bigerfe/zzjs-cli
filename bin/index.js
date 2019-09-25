@@ -1,22 +1,22 @@
 #! /usr/bin/env node
+
 const path = require('path');
 const fs = require('fs');
 
 const program = require('commander');
-const inquirer = require('inquirer');//命令行交互工具
+const inquirer = require('inquirer'); //命令行交互工具
 const download = require('download-git-repo');
 const chalk = require('chalk');
-const shelljs = require('shelljs');//执行shell 命令
+const shelljs = require('shelljs'); //执行shell 命令
 const ora = require('ora');
 
 
 const createPageTemp = require('../src/init-page');
-const createComponentTemp =function (params) {
-    
-}// require('./init-component');
+const createComponentTemp = function (params) {
 
-//const COMMAND = ['project', 'page', 'component'];//命令
-const COMMAND = ['project', 'page'];//选项
+} // require('./init-component');
+
+const COMMAND = ['project', 'page']; //选项
 
 function getCommandIndex(command) {
     return COMMAND.indexOf(command);
@@ -24,7 +24,8 @@ function getCommandIndex(command) {
 
 program
     .version('1.0.0')
-    .option('-i, --init', '初始化 dev project或者创建dev page')
+    .option('-i, --init', '初始化zz.js项目')
+    .option('-p, --page', '帮助创建zz.js page，创建页面需要在zz.js项目的根目录下，否则提示异常')
     //.option('-u, --update', 'update self:更新 krs-cli 工具到最新版,update project 更新项目依赖到最新版');
     .option('-u, --update', '待开发...');
 
@@ -35,7 +36,7 @@ const nameQuestion = {
     type: 'input',
     message: `项目名称: `,
     name: 'name',
-    default: 'krs-ssr-project'
+    default: 'zzjs-ssr-project'
 };
 
 const versionQuestion = {
@@ -66,8 +67,7 @@ const promptList1 = {
     type: "expand",
     message: "请选择",
     name: "fruit",
-    choices: [
-        {
+    choices: [{
             key: "a",
             name: "Apple",
             value: "apple"
@@ -87,7 +87,7 @@ function initProject() {
         nameQuestion,
         versionQuestion
     ]).then(function (answers) {
-        const spinner = ora('正在从github下载[krs-(koa-react-ssr)]').start();
+        const spinner = ora('正在从github下载[zz.js]').start();
         download('Bigerfe/koa-react-ssr', answers.name, function (err) {
             console.log(err);
             if (!err) {
@@ -102,7 +102,7 @@ function initProject() {
                 // console.info(chalk.cyan(` -  npm start / npm run dev`));
                 console.info('');
 
-                
+
                 console.info('');
                 console.info(chalk.green('-----------------------------------------------------'));
                 console.info('');
@@ -230,38 +230,14 @@ async function updateProject() {
 
 //入口
 function main() {
-    if (program.init) {
-        let lastCommand = process.argv[process.argv.length - 1];
-        if (getCommandIndex(lastCommand) === 0) {//创建项目
-            initProject();
-        }
-        else if (getCommandIndex(lastCommand) === 1) {//创建页面
-            initPage();
 
-        } else if (getCommandIndex(lastCommand) === 2) {//创建组件
-            initComponent();
-        } else {
-            inquirer.prompt([
-                promptList
-            ]).then(answers => {
-                switch (answers.command) {
-                    case COMMAND[0]:
-                        initProject();
-                        break;
-                    case COMMAND[1]:
-                        initPage();
-                        break;
-                    case COMMAND[2]:
-                        initComponent();
-                        break;
-                    default:
-                        break;
-                }
-            });
-        }
-    }else{
-
+    if (program.page) {
+        initPage();
     }
+    if (program.init) {
+       initProject();
+    }
+    //更新尚未开发
     // if (program.update) {
     //     let lastCommand = process.argv[process.argv.length - 1];
     //     switch (lastCommand) {

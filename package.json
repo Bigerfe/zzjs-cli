@@ -15,7 +15,12 @@
   },
   "author": "bigerfe.com",
   "license": "ISC",
-  "keywords": ["ssr","zzjs","react ssr","react"],
+  "keywords": [
+    "ssr",
+    "zzjs",
+    "react ssr",
+    "react"
+  ],
   "bugs": {
     "url": "https://github.com/Bigerfe/zzjs-cli/issues"
   },
